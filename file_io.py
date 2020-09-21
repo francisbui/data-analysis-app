@@ -41,6 +41,7 @@ def main_menu():
 
 
 def pop_data():
+    print('\nYou have entered Population Data')
     print('Select the column you want to analyze: \n')
     print('\ta. Pop Apr 1')
     print('\tb. Pop Jul 1')
@@ -58,10 +59,11 @@ def pop_data():
         main_menu()
     else:
         print('Please enter a valid letter that corresponds to the menu item\n')
-        main_menu()
+        pop_data()
 
 
 def house_data():
+    print('\nYou have entered Housing Data')
     print('Select the column you want to analyze: \n')
     print('\ta. Pop Apr 1')
     print('\tb. Pop Jul 1')
@@ -79,7 +81,7 @@ def house_data():
         main_menu()
     else:
         print('Please enter a valid letter that corresponds to the menu item\n')
-        main_menu()
+        house_data()
 
 
 def exit_program():
