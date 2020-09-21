@@ -50,11 +50,14 @@ def pop_data():
 
     user_input = input()
     if user_input == 'a':
+        print('\ta. Pop Apr 1')
         pop_data()
     elif user_input == 'b':
-        house_data()
+        print('\tb. Pop Jul 1')
+        pop_data()
     elif user_input == 'c':
-        exit_program()
+        print('\tc. Change Pop')
+        pop_data()
     elif user_input == 'd':
         main_menu()
     else:
@@ -65,19 +68,30 @@ def pop_data():
 def house_data():
     print('\nYou have entered Housing Data')
     print('Select the column you want to analyze: \n')
-    print('\ta. Pop Apr 1')
-    print('\tb. Pop Jul 1')
-    print('\tc. Change Pop')
-    print('\td. Exit Column')
+    print('\ta. Age')
+    print('\tb. Bedrooms')
+    print('\tc. Built')
+    print('\td. Rooms')
+    print('\te. Utility')
+    print('\tf. Exit Column')
 
     user_input = input()
     if user_input == 'a':
-        pop_data()
+        print('\ta. Age')
+        house_data()
     elif user_input == 'b':
+        print('\tb. Bedrooms')
         house_data()
     elif user_input == 'c':
-        exit_program()
+        print('\tc. Built')
+        house_data()
     elif user_input == 'd':
+        print('\td. Rooms')
+        house_data()
+    elif user_input == 'e':
+        print('\te. Utility')
+        house_data()
+    elif user_input == 'f':
         main_menu()
     else:
         print('Please enter a valid letter that corresponds to the menu item\n')
