@@ -14,7 +14,7 @@ import csv
 import sys
 import re
 import numpy as np
-# import pandas as pd
+import pandas as pd
 
 
 def main_menu():
@@ -48,12 +48,14 @@ def pop_data():
     print('\tc. Change Pop')
     print('\td. Exit Column')
 
-    with open('PopChange.csv', 'r', newline='') as pop_change:
-        # print(f'{"Pop Apr 1":<10}{"Pop Jul 1":<10}{ "Change Pop":>10}')
-        reader = csv.reader(pop_change)
-        for record in reader:
-            id, geo, tgeo1, tgeo2, apr1, jul1, changepop = record
-            print(f'\n{apr1:<20}{jul1:<20}{changepop:<10}')
+    # with open('PopChange.csv', 'r', newline='') as pop_change:
+    #     reader = csv.reader(pop_change)
+    #     for record in reader:
+    #         id, geo, tgeo1, tgeo2, apr1, jul1, changepop = record
+    #         print(f'\n{apr1:<20}{jul1:<20}{changepop:<10}')
+
+    pop_change_import = pd.read_csv('PopChange.csv', skiprows=0)
+    print(pop_change_import)
 
     user_input = input()
     if user_input == 'a':
@@ -82,12 +84,14 @@ def house_data():
     print('\te. Utility')
     print('\tf. Exit Column')
 
-    with open('Housing.csv', 'r', newline='') as house_change:
-        # print(f'{"Pop Apr 1":<10}{"Pop Jul 1":<10}{ "Change Pop":>10}')
-        reader = csv.reader(house_change)
-        for record in reader:
-            age, bedrms, built, nunits, rooms, weight, utility = record
-            print(f'\n{age:<10}{bedrms:<10}{built:<10}{nunits:<10}{rooms:<10}{weight:<20}{utility:<10}')
+    # with open('Housing.csv', 'r', newline='') as house_change:
+    #     reader = csv.reader(house_change)
+    #     for record in reader:
+    #         age, bedrms, built, nunits, rooms, weight, utility = record
+    #         print(f'\n{age:<10}{bedrms:<10}{built:<10}{nunits:<10}{rooms:<10}{weight:<20}{utility:<10}')
+
+    housing_import = pd.read_csv('Housing.csv', skiprows=0)
+    print(housing_import)
 
     user_input = input()
     if user_input == 'a':
