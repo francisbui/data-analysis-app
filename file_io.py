@@ -10,7 +10,7 @@
  * options which will output the results onto the console along with the transpose
  * and average for each respective rows and columns.
 """
-
+import csv
 import sys
 import re
 import numpy as np
@@ -48,6 +48,13 @@ def pop_data():
     print('\tc. Change Pop')
     print('\td. Exit Column')
 
+    with open('PopChange.csv', 'r', newline='') as pop_change:
+        # print(f'{"Pop Apr 1":<10}{"Pop Jul 1":<10}{ "Change Pop":>10}')
+        reader = csv.reader(pop_change)
+        for record in reader:
+            id, geo, tgeo1, tgeo2, apr1, jul1, changepop = record
+            print(f'\n{apr1:<20}{jul1:<20}{changepop:<10}')
+
     user_input = input()
     if user_input == 'a':
         print('\ta. Pop Apr 1')
@@ -74,6 +81,13 @@ def house_data():
     print('\td. Rooms')
     print('\te. Utility')
     print('\tf. Exit Column')
+
+    with open('Housing.csv', 'r', newline='') as house_change:
+        # print(f'{"Pop Apr 1":<10}{"Pop Jul 1":<10}{ "Change Pop":>10}')
+        reader = csv.reader(house_change)
+        for record in reader:
+            age, bedrms, built, nunits, rooms, weight, utility = record
+            print(f'\n{age:<10}{bedrms:<10}{built:<10}{nunits:<10}{rooms:<10}{weight:<20}{utility:<10}')
 
     user_input = input()
     if user_input == 'a':
