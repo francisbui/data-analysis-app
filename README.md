@@ -1,0 +1,2 @@
+# Data Analysis Application
+ The purpose of this program is to import various CSV files with try and except function. After the file has been imported, it will be converted into an array with Pandas. Matplotlib will then create a histogram based on the user's menu selection. A report will also be displayed on the console with the respective columns count, mean, standard deviation, min, and max.data-analysis-app
